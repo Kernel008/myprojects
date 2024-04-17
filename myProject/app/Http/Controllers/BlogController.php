@@ -30,6 +30,9 @@ class BlogController extends Controller
         if ($existingBlog) {
             // Başlık ve sahip aynı olan bir blog gönderisi zaten varsa, güncelle
             $existingBlog->content = $request->content;
+            if($request->category){
+                $existingBlog->category = $request->category;
+            }
             $existingBlog->save();
             return response()->json(['message' => 'Blog başarıyla güncellendi.'], 200);
         } else {
@@ -37,6 +40,9 @@ class BlogController extends Controller
             $blog = new Blog();
             $blog->title = $request->title;
             $blog->content = $request->content;
+            if($request->category){
+                $blog->category = $request->category;
+            }
             $blog->owner = $userEmail;
             $blog->save();
             return response()->json(['message' => 'Blog başarıyla eklendi.'], 200);
@@ -77,17 +83,38 @@ class BlogController extends Controller
         $user = Auth::user();
         $userEmail = $user->email;
 
-        // Eğer "title" parametresi varsa, filtreleme yap
-        if ($request->has('title')) {
-            $title = $request->input('title');
+
+
+        // "title" ve "category" parametreleri varsa, her ikisine de göre filtreleme yap
+        if ($request->has('title') && $request->has('category')) {
+            $title = $request->title;
+            $category = $request->category;
             $blogs = Blog::where('owner', $userEmail)
-                         ->where('title', $title)
-                         ->get();
-        }else{
+                        ->where('title', $title)
+                        ->where('category', $category)
+                        ->get();
+        }
+        // Sadece "title" parametresi varsa, sadece ona göre filtreleme yap
+        elseif ($request->has('title')) {
+            $title = $request->title;
+            $blogs = Blog::where('owner', $userEmail)
+                        ->where('title', $title)
+                        ->get();
+        }
+        // Sadece "category" parametresi varsa, sadece ona göre filtreleme yap
+        elseif ($request->has('category')) {
+            $category = $request->category;
+            $blogs = Blog::where('owner', $userEmail)
+                        ->where('category', $category)
+                        ->get();
+        }
+        // Hiçbir parametre yoksa, tüm blogları getir
+        else {
             $blogs = Blog::where('owner', $userEmail)->get();
         }
 
         return response()->json($blogs);
     }
 
+    
 }
