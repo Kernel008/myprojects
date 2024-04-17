@@ -1,76 +1,5 @@
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Servis Tanıtımı</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2, p {
-            color: #333;
-            margin:5px;
-        }
-        
-        h3{
-        margin:0;
-        }
-        
-        h4{
-         font-weight:500;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .method {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .method.post {
-            background-color: #5cb85c;
-            color: #fff;
-        }
-
-        .method.get {
-            background-color: #5bc0de;
-            color: #fff;
-        }
-
-        .method.put {
-            background-color: #f0ad4e;
-            color: #fff;
-        }
-
-        .method.delete {
-            background-color: #d9534f;
-            color: #fff;
-        }
 
 
-
-    </style>
-</head>
-<body>
     <div class="container">
         <h1>BigCrunch Case</h1>
         <br>
@@ -117,5 +46,3 @@
 		<li>Projeyi yetiştirebilmek adına Etiket özelliğini es geçmek durumunda kaldım fakat kategori ile benzer bir şekilde eklenebilir. İstenirse eklenen etiketler tek bir sütunda virgül ile birleştirilip veri çekerken "LIKE %,mutfak,%" benzeri bir sorgulama yapılabilir. </li>
         <ul>
     </div>
-</body>
-```
