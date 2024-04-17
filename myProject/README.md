@@ -1,43 +1,40 @@
 
-
-    <div class="container">
+<div class="container">
         <h1>BigCrunch Case</h1>
         <br>
         <div class="service">
             <h4>Bu API ile Kullanıcı, Blog ve Yorum yönetimi yapılmaktadır. Register ve Login sonrasındaki tüm servislerde Login servisinden alınan Token verisi Header içerisinde gönderilmelidir. Migration sonrası Kullanıcı, Blog, Yorum verileri eklendikten sonra diğer servislerle işlem sağlanabilir.</h4>
             <br><br>
-            <p class="endpoint"><h3>Kullanıcı Kayıt</h3><br>
+            <p class="endpoint"><h3>Kullanıcı Kayıt</h3>
             <span class="method post">POST</span> /api/register</p>
             <p><strong>Parametreler:</strong> email, password, name</p>
             <br><br>
-            <p class="endpoint"><h3>Kullanıcı Giriş</h3><br>
+            <p class="endpoint"><h3>Kullanıcı Giriş</h3>
             <span class="method post">POST</span> /api/login</p>
             <p><strong>Parametreler:</strong> email, password</p>
             <br><br>
-            <p class="endpoint"><h3>Blog Ekleme - Güncelleme</h3><br>
+            <p class="endpoint"><h3>Blog Ekleme - Güncelleme</h3>
             <span class="method post">POST</span> /api/blog</p>
             <p><strong>Parametreler:</strong> title, content, category (opsiyonel)</p>
             <p><strong>Not:</strong> Kullanıcının aynı 'title' değeriyle bir blogu varsa veriler güncellenir.</p>
             <br><br>
-            <p class="endpoint"><h3>Blog Silme</h3><br>
+            <p class="endpoint"><h3>Blog Silme</h3>
             <span class="method delete">DELETE</span> /api/blog</p>
             <p><strong>Parametreler:</strong> title</p>
-            
             <br><br>
-            <p class="endpoint"><h3>Blog Listeleme</h3><br>
+            <p class="endpoint"><h3>Blog Listeleme</h3>
             <span class="method get">GET</span> /api/blog</p>
             <p><strong>Parametreler:</strong> title (opsiyonel), category (opsiyonel)</p>
              <p><strong>Not:</strong> 'title' ve 'category' parametreleri gönderilirse bloglar filtrelenir, gönderilmezse kullanıcının tüm blogları listelenir.</p>
              <br><br>
-            <p class="endpoint"><h3>Yorum Ekleme</h3><br>
+            <p class="endpoint"><h3>Yorum Ekleme</h3>
             <span class="method post">POST</span> /api/comment</p>
             <p><strong>Parametreler:</strong> blogId, comment</p>
             <br><br>
-            <p class="endpoint"><h3>Yorum Listeleme</h3><br>
+            <p class="endpoint"><h3>Yorum Listeleme</h3>
             <span class="method get">GET</span> /api/comment</p>
             <p><strong>Parametreler:</strong> blogId</p>
            <p><strong>Not:</strong> 'blogId' parametresi gönderilirse ilgili blogun yorumları listelenir, gönderilmezse tüm yorumlar listelenir.</p>
-
         </div>
         <br><br>
         <h4><strong>Genel Yorumlar</strong></h4>
