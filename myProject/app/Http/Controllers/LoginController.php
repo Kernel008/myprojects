@@ -20,7 +20,7 @@ class LoginController extends Controller
     
         if (! $user || ! Hash::check($request->password, $user->password)) {
             return response([
-                'message' => ['The provided credentials are incorrect.']
+                'message' => ['Bilgiler doğru değil.']
             ], 500);
         }
 

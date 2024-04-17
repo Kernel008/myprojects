@@ -46,7 +46,8 @@ return [
     |
     */
 
-    'expiration' => null,
+    // Token Geçerlilik Süresi: 30dk
+    'expiration' => 30,
 
     /*
     |--------------------------------------------------------------------------
